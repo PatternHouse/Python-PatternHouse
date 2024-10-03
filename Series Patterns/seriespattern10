@@ -1,0 +1,32 @@
+# Function to check if a number is prime
+def is_prime(num):
+    # Numbers less than 2 are not prime
+    if num < 2:
+        return False
+    # Check for divisibility from 2 to square root of num
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Function to print prime numbers up to n
+def print_primes(n):
+    print("Prime numbers up to", n, "are:")
+    # Check each number from 2 to n
+    for num in range(2, n + 1):
+        # If the number is prime, print it
+        if is_prime(num):
+            print(num, end=" ")
+    print()  # Print a newline at the end
+
+# Set the upper limit
+n = 20
+
+# Call the function to print prime numbers
+print_primes(n)
+
+"""
+OUTPUT:
+Prime numbers up to 20 are:
+2 3 5 7 11 13 17 19 
+"""
